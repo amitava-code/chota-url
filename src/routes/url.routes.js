@@ -5,7 +5,9 @@ import urlModel from '../models/url.model.js'
 
 const router = express.Router()
 
-
+/**
+ * @POST api/url
+ */
 
 router.post("/", async function (req,res){
 
@@ -43,7 +45,24 @@ router.post("/", async function (req,res){
     })
 })
 
+/**
+ * @GET api/url
+ */
 
+router.get('/', async function(req,res){
+
+    const urls = await urlModel.find()
+
+    return res.status(200).json({
+        message:"URLs fetched successfully",
+        data:{
+            urls,
+        }
+    })
+
+
+
+})
 
 
 
