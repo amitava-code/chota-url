@@ -1,9 +1,9 @@
 import crypto from 'crypto'
 
-const genetateCode = ()=> {
+const generateCode = ()=> {
 
     let shortCode = (crypto.randomBytes(6).toString('base64url').slice(0,6))
 
     return shortCode
 }
-export default genetateCode
+export default generateCode
